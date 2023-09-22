@@ -19,3 +19,13 @@ const result = budget > total ? console.log("Si me voy"):console.log("No me voy"
 const newresult = budget > total ?100:200;
 
 const NUM = "30" + 3;
+
+/* 
+Tarea practica:
+
+tenemos una cadena de texto
+(const cadena = "En un lugar de la mancha")
+si la cadena es mas larga de 27 caracteres debo cortarla, debo dejarla entre 27
+en caso de que sea menor, debo añadir caracteres.
+realizar todas las comprobaciones posibles para cumplir con las especificaciones
+*/

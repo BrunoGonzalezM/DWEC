@@ -7,4 +7,4 @@ if(correoElectronico==''){// Comprueba si el correo electrónico ingresado está
     resultado=correoElectronico.split('@')[0].trim();// Asigna la parte antes del "@" después de quitar espacios en blanco a la variable "resultado".
 }
 resultadoElement = document.getElementById("resultado");// Obtiene el elemento HTML con el id "resultado".
-resultadoElement.innerText = resultado; // Asigna el valor de la variable "resultado" como el texto del elemento HTML con id "resultado".
+resultadoElement.innerText = resultado;  // Asigna el valor de la variable "resultado" como el texto del elemento HTML con id "resultado".

@@ -11,7 +11,7 @@ if (num === null || num === '') { // Comprueba si 'num' es nulo o está vacío.
     const ul = document.createElement('ul');// Crea un elemento de lista desordenada.
     for (let i = 0; i <= 10; i++) { // Bucle que itera de 0 a 10.
         const multiplicacion = num * i;// Calcula la multiplicación del número ingresado por 'i'.
-        console.log(num + " * " + i + " = " + multiplicacion);// Muestra la multiplicación en la consola.
+        console.log(num + " * " + i + " = " + multiplicacion); // Muestra la multiplicación en la consola.
 
         const li = document.createElement('li');// Crea un elemento de lista.
         li.textContent = num + " * " + i + " = " + multiplicacion;// Asigna el texto de la multiplicación al elemento de lista.

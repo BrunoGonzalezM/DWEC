@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const miSet = new Set([34,"dk",true,""]); //No se pueden repetir datos
+
+        const miSet1 = new Set();
+        miSet1.add(1);
+        miSet1.add(5);
+        miSet1.add(5);
+        miSet1.add(7);
+        miSet1.add("Hola mundo");
+        const objeto={a:"Hola",b:12};
+        miSet1.add(objeto);
+        miSet1.add({a:"texto",b:28});
+
+        //Consultar el conjunto
+
+        console.log(miSet1.has(1));             //comprobar si existe algo dentro
+        console.log(miSet1.has(Math.sqrt(25))); //comprobar si existe este num
+        console.log(miSet1.has(objeto));        //comprobar si existe este objeto 
+        console.log(miSet1.size);               //ver la cantidad de elementos hay dentro
+        console.log(miSet1.delete(2));          //Elimina el elemento en la posicion 2.
+        console.log(miSet1.delete(objeto));     //Elimina el elemento especificado
+
+        console.log(miSet1);
+
+        //Iterar sobre conjuntos
+
+        for(let item of miSet1){
+            console.log(item);        //muestra todos los elementos de "miSet1";
+        }
+        
+        for(let item of miSet1.values()){
+            console.log(item);
+        }
+
+        const miArray = Array.from(miSet1); //Guardamos los elementos de miSet1 en un Array
+
+        miSet1.add(document.body);
+        console.log(miSet1.has(document.querySelector('body'))); //comprobar si existe un body en documment
+
+        
+    </script>
+</body>
+</html>

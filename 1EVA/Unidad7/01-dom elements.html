@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", e =>{
+            console.log(document);
+            const objHTML = document.documentElement;
+
+            const objHEAD = document.firstChild;
+
+            const objBody = document.lastChild;
+
+            const hijosHead = objHEAD.childNodes;
+
+            const numHijosHead = objHEAD.childNodes.length;
+
+            console.log(objHTML);
+
+            const numHijosBody = objBody.childNodes.length;
+            const hijosBody = objBody.childNodes;
+
+            console.log(hijosBody);
+            console.log(numHijosBody);
+
+            const primerHijoBody = objBody.firstChild;
+            const cuartoHijoBody = objBody.lastChild;
+            console.log(primerHijoBody);
+            console.log(cuartoHijoBody);
+
+            const padre = cuartoHijoBody.parentNode;
+            console.log(padre);
+
+            console.log(document.nodeType);
+            console.log(objHTML.nodeType);
+            console.log(objBody.nodeType);
+            console.log(primerHijoBody.nodeType);
+            console.log(cuartoHijoBody.nodeType);
+
+            const parrafos = objBody.getElementByTagName("p");
+            console.log(parrafos);
+            console.log(parrafos[1]);
+            parrafos[1].style.backgroundColor = "green";
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feach</title>
+</head>
+
+<body>
+    <div class="contenido">
+        <button id="btn">PULSAME</button>
+    </div>
+
+    <script>
+        async function fetchUserJSON() {
+            const response = await fetch('./user.json');
+            const user = await response.json();
+            return user;
+        };
+        const imgURL = "";
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+        const url = './user.json';
+
+        btn.addEventListener("click", e => {
+
+            fetchUserJSON().then(user => {
+                console.log(user);
+                contenido.innerHTML = user.nombre;
+            })
+
+        });
+
+    </script>
+</body>
+
+</script>
+</body>
+
+</html>

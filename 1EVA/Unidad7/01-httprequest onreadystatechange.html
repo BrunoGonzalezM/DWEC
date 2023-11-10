@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01-estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">GET!</button>
+        <input type="file" name="" id="inputFile">
+    </div>
+    <script>
+        
+     btn.addEventListener("click",e =>{
+        xhr.open("POST", "http://localhost/save-json.php");
+        const obj ={
+            
+            nombre : "paloma",
+            apellido : "perez"
+        }
+        
+        xhr.send(JSON.stringify(obj));
+     })
+     btn.addEventListener("click",e =>{
+        xhr.open("POST", "http://localhost/save.php");
+        var file = inputFile.files;
+        var data = new FormData();
+        data.append('image',file[0])
+        xhr.send(data);
+        
+     })
+    </script>
+</body>
+</html>

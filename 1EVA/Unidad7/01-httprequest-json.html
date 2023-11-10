@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01-estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">GET!</button>
+
+    </div>
+    <script>
+
+        //const imgURL = "https://media.gettyimages.com/vectors/programming-projection"
+
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+
+        const xhr = new XMLHttpRequest();
+
+        //xhr.open("GET", "http://www.boredapi.com/api/activity");
+
+        xhr.addEventListener("load", function (){
+            console.log(this.responseText);
+            //contenido.innerHTML = this.responseText;
+            let user = JSON.parse(this.responseText);
+            contenido.innerHTML = user.activity;
+            //contenido.innerHTML=user.activity;
+            console.log(user);
+
+            console.log(this.response);
+            let respeusta = this.response;
+            insertOutputResponse(this.response);
+        });
+
+        btn.addEventListener("click", e =>{
+            xhr.open("GET", "http://www.boredapi.com/api/activity");
+            xhr.send();
+        });
+
+        function insertOutputResponse(response){
+
+            let decodeResponse = JSON.parse(response);
+            contenido.innerHTML="";
+            
+            let activity=document.createElement("h4");
+            activity.append(decodeResponse.activity);
+            contenido.append(activity);
+
+            if(decodeResponse.type){
+                let tipoActivity=document.createElement("p");
+                tipoActivity.append(`Tipo: ${decodeResponse.type}`);
+                contenido.append(tipoActivity);
+            }
+
+            if(decodeResponse.link){
+                let enlace= document.createElement("h4");
+                enlace.append(`Enlace: ${decodeResponse.link}`);
+                contenido.append(enlace);
+            }
+        
+        }
+    </script>   
+</body>
+</html>

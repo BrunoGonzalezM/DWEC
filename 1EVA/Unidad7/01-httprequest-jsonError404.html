@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01-estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ajax con XMLHttpRequest</h1>
+        <div class="contenido">
+
+        </div>
+        <button id="btn">GET!</button>
+
+    </div>
+    <script>
+
+        //const imgURL = "https://media.gettyimages.com/vectors/programming-projection"
+
+        const contenido = document.querySelector(".contenido");
+        const btn = document.getElementById("btn");
+
+        const xhr = new XMLHttpRequest();
+
+        //xhr.open("GET", "http://www.boredapi.com/api/activity");
+
+        xhr.addEventListener("load", function (){
+            console.log(this.statusText);
+            console.log(this.status);
+            if(this.status === 200){
+                contenido.classList.add("success");
+            }else{
+                contenido.classList.add("error");
+            }
+        });
+
+        btn.addEventListener("click", e =>{
+            xhr.open("GET", "./user.json");
+            xhr.responseText = "json";
+            //xhr.open("GET", "http://www.boredapi.com/api/activity");
+            xhr.send();
+        });
+        
+    </script>   
+</body>
+</html>
